@@ -1,0 +1,78 @@
+Git basic commands 
+
+# Install Git
+sudo apt-get install git
+
+# Check git version
+git --version
+
+# Install gitk: useful for tracking changes
+sudo apt-get install gitk
+
+# Clone rep
+git clone <repo-url>
+
+# Clone specific branch directly
+git clone -b <branch-name> <repo-url>
+
+# List out changes in your local branch
+git status
+
+# List out all the branches in your application (locally)
+git branch
+
+
+
+# Create a new branch and move to the newly created branch
+# NOTE: make sure to have clean branch before creating a new branch
+# if you checkout with modified files, all the changes will be moved to the new branch
+
+git checkout -b <branch-name>
+
+# Move to the other existing branch in your local
+git checkout <branch-name>
+
+# Rename your local branch
+git branch -m <branch-name>
+
+# Track the uncommitted changes and recent commits 
+gitk --all   (OR)   gitk
+
+# List previous commits
+git log
+
+# To configure Github username & email
+   # Print existing details
+   git config user.name
+   git config user.email
+
+    # Setup new details
+   git config user.name "Kishore"
+   git config user.email "venkat@xxx.com"
+
+# Remove the specific file from the Github 
+# Commit and push the changes after doing this
+git rm -f <file-path>
+
+# To revert unwanted changes from a line in your local
+# Try this before commit the changes
+git checkout <file-path>    (to revert a single file)
+git checkout -- .                 (to revert all the local changes)
+ 
+# Index your local uncommitted changes
+git add .
+
+# Commit your changes
+git commit -m "commit message"
+
+# Pull the changes
+git pull origin <branch-name>
+
+# Push the changes to the existing remote branch
+git push origin <branch-name>
+
+# Create a new remote branch and push the changes
+git push origin <branch-name> -f
+
+# To delete existing  local branch
+git branch -D branch_name
